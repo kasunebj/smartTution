@@ -8,18 +8,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface LessonService {
-	public Iterable<TutionClass> fetch();
+	 Iterable<TutionClass> fetch();
 
 
-    public ResponseEntity<TutionClass> fetchSingleItem(int id);
+     ResponseEntity<TutionClass> fetchSingleItem(int id);
 
 
-    public ResponseEntity<TutionClass> insert(TutionClass classinfo);
+     ResponseEntity<TutionClass> insert(TutionClass classinfo);
 
 
-    public Map<String, Boolean> remove(int id);
+     Map<String, Boolean> remove(int id);
 
 
-    public ResponseEntity<TutionClass> update(int classinfo_id , TutionClass classinfo);
+     ResponseEntity<TutionClass> update(int classinfo_id , TutionClass classinfo);
 }
 
