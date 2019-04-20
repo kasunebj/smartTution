@@ -17,33 +17,33 @@ import org.springframework.web.bind.annotation.RestController;
 import com.solution.smartTution.services.ClassService;
 
 @RestController
-@RequestMapping("/smartTution/classinfo")
+@RequestMapping("/smartTution")
 public class TutionController {
 	
 	@Autowired
 	private ClassService classService;
 
-    @GetMapping("/Classes")
+    @GetMapping("/classes")
     public Iterable<TutionClass> fetchClasses(){
     	return classService.fetch();
     	
     }
-    @GetMapping("/Classes/{classid}")
+    @GetMapping("/classes/{classid}")
     public ResponseEntity<TutionClass> fetchClassById(@PathVariable("classid") int id){
     	return classService.fetchSingleItem(id);
 
     }
-    @PostMapping("/Classes")
+    @PostMapping("/classes")
     public ResponseEntity<TutionClass> addClass(@RequestBody TutionClass classinfo){
     	return classService.insert(classinfo);
 
     }
     
-    @DeleteMapping("/Classes/{classid}")
+    @DeleteMapping("/classes/{classid}")
     public Map<String, Boolean> deleteClass(@PathVariable ("classid") int id){
     	return classService.remove(id);
 
-    }@PutMapping("/Classes/{classid}")
+    }@PutMapping("/classes/{classid}")
     public ResponseEntity<TutionClass> updateClass(@PathVariable ("classid") int id, @RequestBody TutionClass clasinfo){
     	return classService.update(id, clasinfo);
 

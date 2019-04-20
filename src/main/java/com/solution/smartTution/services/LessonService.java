@@ -2,24 +2,25 @@ package com.solution.smartTution.services;
 
 import java.util.Map;
 
+import com.solution.smartTution.model.Lesson;
 import com.solution.smartTution.model.TutionClass;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface LessonService {
-	 Iterable<TutionClass> fetch();
+	 Iterable<Lesson> fetch();
 
 
-     ResponseEntity<TutionClass> fetchSingleItem(int id);
+     ResponseEntity<Lesson> fetchSingleItem(int id);
 
 
-     ResponseEntity<TutionClass> insert(TutionClass classinfo);
+     ResponseEntity<Lesson> insert(Lesson lesson);
 
 
      Map<String, Boolean> remove(int id);
 
 
-     ResponseEntity<TutionClass> update(int classinfo_id , TutionClass classinfo);
+     ResponseEntity<Lesson> update(int lesson_id , Lesson lesson);
 }
 

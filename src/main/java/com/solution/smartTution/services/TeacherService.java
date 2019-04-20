@@ -1,7 +1,6 @@
 package com.solution.smartTution.services;
 
 import com.solution.smartTution.model.Teacher;
-import com.solution.smartTution.model.TutionClass;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Map;
@@ -13,12 +12,10 @@ public interface TeacherService {
 
      ResponseEntity<Teacher> fetchSingleItem(int id);
 
+    ResponseEntity<Teacher> insert(Teacher teacher);
 
-     ResponseEntity<Teacher> insert(TutionClass classinfo);
-
-
-     Map<String, Boolean> remove(int id);
+    Map<String, Boolean> remove(int id);
 
 
-     ResponseEntity<TutionClass> update(int teacher_id , Teacher teacher);
+     ResponseEntity<Teacher> update(int teacher_id , Teacher teacher);
 }
